@@ -22,26 +22,78 @@ function setTheme(mode) {
   }
 }
 
-VANTA.BIRDS({
-  el: "#waves-bg",
-  backgroundColor: 0xd2d56,
-  backgroundAlpha: 0.91,
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  colorMode: "variance",
-  birdSize: 1.10,
-  wingSpan: 19.00,
-  speedLimit: 4.00,
-  separation: 68.00,
-  alignment: 43.00,
-  cohesion: 1.00,
-  quantity: 4.00
-})
+window.onload = function () {
+  setTimeout(function () {
+    VANTA.BIRDS({
+      el: "#waves-bg",
+      backgroundColor: 0xd2d56,
+      backgroundAlpha: 0.91,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      colorMode: "variance",
+      birdSize: 1.10,
+      wingSpan: 19.00,
+      speedLimit: 4.00,
+      separation: 68.00,
+      alignment: 43.00,
+      cohesion: 1.00,
+      quantity: 4.00
+    })
+  }, 1000);
+
+  $(function () {
+    window.sr = ScrollReveal();
+
+    if ($(window).width() < 768) {
+      if ($(".timeline-content").hasClass("js--fadeInLeft")) {
+        $(".timeline-content")
+          .removeClass("js--fadeInLeft")
+          .addClass("js--fadeInRight");
+      }
+
+      sr.reveal(".js--fadeInRight", {
+        origin: "right",
+        distance: "300px",
+        easing: "ease-in-out",
+        duration: 800
+      });
+    } else {
+      sr.reveal(".js--fadeInLeft", {
+        origin: "left",
+        distance: "300px",
+        easing: "ease-in-out",
+        duration: 800
+      });
+
+      sr.reveal(".js--fadeInRight", {
+        origin: "right",
+        distance: "300px",
+        easing: "ease-in-out",
+        duration: 800
+      });
+    }
+
+    sr.reveal(".js--fadeInLeft", {
+      origin: "left",
+      distance: "300px",
+      easing: "ease-in-out",
+      duration: 800
+    });
+
+    sr.reveal(".js--fadeInRight", {
+      origin: "right",
+      distance: "300px",
+      easing: "ease-in-out",
+      duration: 800
+    });
+  });
+
+}
 
 // VANTA.WAVES({
 //   el: "#waves-bg",
@@ -59,52 +111,6 @@ VANTA.BIRDS({
 //   zoom: 0.89
 // })
 
-$(function () {
-  window.sr = ScrollReveal();
-
-  if ($(window).width() < 768) {
-    if ($(".timeline-content").hasClass("js--fadeInLeft")) {
-      $(".timeline-content")
-        .removeClass("js--fadeInLeft")
-        .addClass("js--fadeInRight");
-    }
-
-    sr.reveal(".js--fadeInRight", {
-      origin: "right",
-      distance: "300px",
-      easing: "ease-in-out",
-      duration: 800
-    });
-  } else {
-    sr.reveal(".js--fadeInLeft", {
-      origin: "left",
-      distance: "300px",
-      easing: "ease-in-out",
-      duration: 800
-    });
-
-    sr.reveal(".js--fadeInRight", {
-      origin: "right",
-      distance: "300px",
-      easing: "ease-in-out",
-      duration: 800
-    });
-  }
-
-  sr.reveal(".js--fadeInLeft", {
-    origin: "left",
-    distance: "300px",
-    easing: "ease-in-out",
-    duration: 800
-  });
-
-  sr.reveal(".js--fadeInRight", {
-    origin: "right",
-    distance: "300px",
-    easing: "ease-in-out",
-    duration: 800
-  });
-});
 
 $('.post-wrapper').slick({
   slidesToShow: 3,
