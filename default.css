@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Russo One";
+  src: url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+  font-display: swap;
+}
+
 :root {
   --mainColor: #eaeaea;
   --secondaryColor: #fff;
@@ -191,7 +197,7 @@ h6 {
   display: block;
   margin: 0 auto;
 
-  height: 100;
+  height: 300px;
   width: 200px;
   object-fit: cover;
   border: 2px solid var(--borderColor);
@@ -248,8 +254,6 @@ h6 {
   grid-area: right-column;
   display: grid;
   align-content: center;
-
-  padding-top: 50px;
   padding-bottom: 50px;
 }
 

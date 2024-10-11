@@ -23,74 +23,49 @@ function setTheme(mode) {
 }
 
 window.onload = function () {
-  setTimeout(function () {
-    VANTA.BIRDS({
-      el: "#waves-bg",
-      backgroundColor: 0xd2d56,
-      backgroundAlpha: 0.91,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      colorMode: "variance",
-      birdSize: 1.10,
-      wingSpan: 19.00,
-      speedLimit: 4.00,
-      separation: 68.00,
-      alignment: 43.00,
-      cohesion: 1.00,
-      quantity: 4.00
-    })
-  }, 1000);
+  VANTA.BIRDS({
+    el: "#waves-bg",
+    backgroundColor: 0xd2d56,
+    backgroundAlpha: 0.91,
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    birdSize: 0.8,
+    wingSpan: 16.00,
+    speedLimit: 3.00,
+    separation: 50.00,
+    alignment: 40.00,
+    cohesion: 0.80,
+    quantity: 3.00
+  })
 
-  $(function () {
-    window.sr = ScrollReveal();
+  let ticking = false;
 
-    if ($(window).width() < 768) {
-      if ($(".timeline-content").hasClass("js--fadeInLeft")) {
-        $(".timeline-content")
-          .removeClass("js--fadeInLeft")
-          .addClass("js--fadeInRight");
-      }
+  // Initialize ScrollReveal and check if it's available
+  const sr = ScrollReveal();
 
-      sr.reveal(".js--fadeInRight", {
-        origin: "right",
-        distance: "300px",
-        easing: "ease-in-out",
-        duration: 800
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        // Make sure ScrollReveal instance is available
+        if (sr && document.querySelector('.js--fadeInLeft') && document.querySelector('.js--fadeInRight')) {
+          sr.reveal('.js--fadeInLeft', {
+            origin: 'left',
+            distance: '300px',
+            duration: 800
+          });
+          sr.reveal('.js--fadeInRight', {
+            origin: 'right',
+            distance: '300px',
+            duration: 800
+          });
+        }
+        ticking = false;
       });
-    } else {
-      sr.reveal(".js--fadeInLeft", {
-        origin: "left",
-        distance: "300px",
-        easing: "ease-in-out",
-        duration: 800
-      });
-
-      sr.reveal(".js--fadeInRight", {
-        origin: "right",
-        distance: "300px",
-        easing: "ease-in-out",
-        duration: 800
-      });
+      ticking = true;
     }
-
-    sr.reveal(".js--fadeInLeft", {
-      origin: "left",
-      distance: "300px",
-      easing: "ease-in-out",
-      duration: 800
-    });
-
-    sr.reveal(".js--fadeInRight", {
-      origin: "right",
-      distance: "300px",
-      easing: "ease-in-out",
-      duration: 800
-    });
   });
 
 }

@@ -16,8 +16,14 @@
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"
+      defer
+    ></script>
 
     <link
       rel="stylesheet"
@@ -28,7 +34,10 @@
     <script
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+      defer
     ></script>
+
+    <script type="text/JavaScript" src="script.js" defer></script>
     <title>Kapil Kulkarni</title>
   </head>
 
@@ -51,7 +60,12 @@
             </ul>
           </div>
           <div class="left-column">
-            <img id="profile_pic" src="images/profile.jpg" alt="" />
+            <img
+              id="profile_pic"
+              src="images/Profile-1.jpg"
+              alt="profile picture"
+              loading="lazy"
+            />
             <h5 style="text-align: center; line-height: 0">
               Personalized Theme
             </h5>
@@ -90,8 +104,13 @@
 
             <hr />
             <p class="white">
-              I am a Frontend Engineer with a knack for creating attractive
-              websites and web applications.
+              Frontend Engineer with 4+ years of experience in designing
+              visually appealing, user-friendly websites and developing
+              scalable, high-performance web applications. Skilled in modern
+              frontend technologies, I have a strong focus on delivering clean,
+              efficient code and creating seamless user experiences that align
+              with business goals.
+              <br />
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/kapil-kulkarni74/"
@@ -106,16 +125,23 @@
                     src="./images/skills/html.png"
                     alt="html"
                     loading="lazy"
+                    title="HTML"
                   />
                 </li>
                 <li>
-                  <img src="./images/skills/css.png" alt="CSS" loading="lazy" />
+                  <img
+                    src="./images/skills/css.png"
+                    alt="CSS"
+                    loading="lazy"
+                    title="CSS"
+                  />
                 </li>
                 <li>
                   <img
                     src="./images/skills/sass.png"
                     alt="sass"
                     loading="lazy"
+                    title="SCSS"
                   />
                 </li>
                 <li>
@@ -123,6 +149,7 @@
                     src="./images/skills/javascript.png"
                     alt="javascript"
                     loading="lazy"
+                    title="Javascript"
                   />
                 </li>
                 <li>
@@ -130,6 +157,7 @@
                     src="./images/skills/react.png"
                     alt="react"
                     loading="lazy"
+                    title="React"
                   />
                 </li>
                 <li>
@@ -137,6 +165,7 @@
                     src="./images/skills/tailwind.png"
                     alt="tailwind"
                     loading="lazy"
+                    title="Tailwind"
                   />
                 </li>
                 <li>
@@ -144,6 +173,7 @@
                     src="./images/skills/styled.png"
                     alt="styled"
                     loading="lazy"
+                    title="Styled Components"
                   />
                 </li>
                 <li>
@@ -151,6 +181,7 @@
                     src="./images/skills/webpack.png"
                     alt="webpack"
                     loading="lazy"
+                    title="Webpack"
                   />
                 </li>
                 <li>
@@ -158,6 +189,7 @@
                     src="./images/skills/node.png"
                     alt="node"
                     loading="lazy"
+                    title="Node.js"
                   />
                 </li>
                 <li>
@@ -165,6 +197,7 @@
                     src="./images/skills/express.png"
                     alt="express"
                     loading="lazy"
+                    title="Express.js"
                   />
                 </li>
                 <li>
@@ -172,6 +205,7 @@
                     src="./images/skills/mongo.png"
                     alt="mongoDB"
                     loading="lazy"
+                    title="MongoDB"
                   />
                 </li>
                 <li>
@@ -179,6 +213,7 @@
                     src="./images/skills/wordpress.png"
                     alt="wordpress"
                     loading="lazy"
+                    title="Wordpress"
                   />
                 </li>
               </ul>
@@ -192,6 +227,15 @@
       <h3 class="white">Experience</h3>
       <div class="container">
         <!--     ITEM 1  -->
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+
+          <div class="timeline-content js--fadeInLeft">
+            <h4>Interview Kickstart (Sep 2024 - Present)</h4>
+          </div>
+        </div>
+
+        <!--     ITEM 2  -->
         <div class="timeline-item">
           <div class="timeline-img"></div>
 
@@ -227,7 +271,7 @@
           </div>
         </div>
 
-        <!--     ITEM 2  -->
+        <!--     ITEM 3  -->
         <div class="timeline-item">
           <div class="timeline-img"></div>
           <div class="timeline-content js--fadeInRight">
@@ -263,7 +307,7 @@
           </div>
         </div>
 
-        <!--     ITEM 1  -->
+        <!--     ITEM 4  -->
         <div class="timeline-item">
           <div class="timeline-img"></div>
 
@@ -279,6 +323,20 @@
         <h3 style="text-align: center" class="white">Some of my Projects</h3>
 
         <div class="post-wrapper">
+          <div class="post">
+            <img class="thumbnail" src="images/drawing.png"" alt="" />
+            <div class="post-preview">
+              <h6 class="post-title">Sketch Board</h6>
+              <p class="post-intro">
+                An online real-time sketch board that enables multiple users to
+                collaborate. Built using Next.js, TS, Canvas API, and
+                WebSockets.
+              </p>
+              <a target="_blank" href="https://drawing-tool-six.vercel.app/"
+                >View Project</a
+              >
+            </div>
+          </div>
           <div class="post">
             <img class="thumbnail" src="images/sorting.png"" alt="" />
             <div class="post-preview">
@@ -373,6 +431,5 @@
         </h4>
       </div>
     </section>
-    <script type="text/JavaScript" src="script.js"></script>
   </body>
 </html>
